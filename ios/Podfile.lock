@@ -75,7 +75,10 @@ PODS:
   - glog (0.3.5)
   - hermes-engine (0.70.1)
   - libevent (2.1.12)
+  - MultiplatformBleAdapter (0.1.9)
   - OpenSSL-Universal (1.1.1100)
+  - Permission-BluetoothPeripheral (3.6.1):
+    - RNPermissions
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -302,7 +305,18 @@ PODS:
   - React-jsinspector (0.70.1)
   - React-logger (0.70.1):
     - glog
+  - react-native-background-timer (2.4.1):
+    - React-Core
+  - react-native-ble-manager (8.4.3):
+    - React-Core
+  - react-native-ble-plx (2.0.3):
+    - MultiplatformBleAdapter (= 0.1.9)
+    - React-Core
   - react-native-date-picker (4.2.5):
+    - React-Core
+  - react-native-keep-awake (1.1.0):
+    - React-Core
+  - react-native-quick-base64 (2.0.5):
     - React-Core
   - react-native-safe-area-context (4.3.4):
     - RCT-Folly
@@ -376,9 +390,17 @@ PODS:
     - React-jsi (= 0.70.1)
     - React-logger (= 0.70.1)
     - React-perflogger (= 0.70.1)
+  - RNDateTimePicker (6.5.0):
+    - React-Core
+  - RNDeviceInfo (10.3.0):
+    - React-Core
+  - RNPermissions (3.6.1):
+    - React-Core
   - RNScreens (3.17.0):
     - React-Core
     - React-RCTImage
+  - RNSVG (13.5.0):
+    - React-Core
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -414,6 +436,7 @@ DEPENDENCIES:
   - hermes-engine (from `../node_modules/react-native/sdks/hermes/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
   - OpenSSL-Universal (= 1.1.1100)
+  - Permission-BluetoothPeripheral (from `../node_modules/react-native-permissions/ios/BluetoothPeripheral`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
@@ -431,7 +454,12 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-background-timer (from `../node_modules/react-native-background-timer`)
+  - react-native-ble-manager (from `../node_modules/react-native-ble-manager`)
+  - react-native-ble-plx (from `../node_modules/react-native-ble-plx`)
   - react-native-date-picker (from `../node_modules/react-native-date-picker`)
+  - "react-native-keep-awake (from `../node_modules/@sayem314/react-native-keep-awake`)"
+  - react-native-quick-base64 (from `../node_modules/react-native-quick-base64`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -445,7 +473,11 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -462,6 +494,7 @@ SPEC REPOS:
     - FlipperKit
     - fmt
     - libevent
+    - MultiplatformBleAdapter
     - OpenSSL-Universal
     - SocketRocket
     - YogaKit
@@ -479,6 +512,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes/hermes-engine.podspec"
+  Permission-BluetoothPeripheral:
+    :path: "../node_modules/react-native-permissions/ios/BluetoothPeripheral"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -509,8 +544,18 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-background-timer:
+    :path: "../node_modules/react-native-background-timer"
+  react-native-ble-manager:
+    :path: "../node_modules/react-native-ble-manager"
+  react-native-ble-plx:
+    :path: "../node_modules/react-native-ble-plx"
   react-native-date-picker:
     :path: "../node_modules/react-native-date-picker"
+  react-native-keep-awake:
+    :path: "../node_modules/@sayem314/react-native-keep-awake"
+  react-native-quick-base64:
+    :path: "../node_modules/react-native-quick-base64"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -537,8 +582,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNDateTimePicker:
+    :path: "../node_modules/@react-native-community/datetimepicker"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -561,7 +614,9 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 9cd393f741bfa14d1d0cd90cc373e3619c0bc7ea
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  MultiplatformBleAdapter: 5a6a897b006764392f9cef785e4360f54fb9477d
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
+  Permission-BluetoothPeripheral: 67708853584bb9208c76d36d0e0ea4eafb97ea5b
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 1b4e0388c8ad776b2d23f8135926fa4e7ddacdf4
   RCTTypeSafety: 23dc09d6e9ed210fabab031a568bb0194d492385
@@ -577,7 +632,12 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 47201924064085223b63ec7e3ee9fd40ad8508e8
   React-jsinspector: 1363be638eccfe1aea1b10dd42e632b0397e5ec8
   React-logger: 7bd569e3857d74ed412ce0a5c51f421ff7d4ca7f
+  react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
+  react-native-ble-manager: b67db4b4c9f8ce8038b4aad4fe29db98878738ea
+  react-native-ble-plx: f10240444452dfb2d2a13a0e4f58d7783e92d76e
   react-native-date-picker: 55193347d8d0f40948f441ffd4e5db6f0a8fbe13
+  react-native-keep-awake: acbee258db16483744910f0da3ace39eb9ab47fd
+  react-native-quick-base64: e657e9197e61b60a9dec49807843052b830da254
   react-native-safe-area-context: dfe5aa13bee37a0c7e8059d14f72ffc076d120e9
   React-perflogger: 48c6b363e867d64b682e84f80ca45636bd65e19c
   React-RCTActionSheet: 33c74fe5c754835e3715c300618da9aa2f7203fa
@@ -591,11 +651,15 @@ SPEC CHECKSUMS:
   React-RCTVibration: e9164827303fb6a5cf79e4c4af4846a09956b11f
   React-runtimeexecutor: a11d0c2e14140baf1e449264ca9168ae9ae6bbd0
   ReactCommon: 7f86326b92009925c6dcf93f8e825060171c379f
+  RNDateTimePicker: 154f8246e9c32fd663995647a7f9f667a8c6b258
+  RNDeviceInfo: 4701f0bf2a06b34654745053db0ce4cb0c53ada7
+  RNPermissions: dcdb7b99796bbeda6975a6e79ad519c41b251b1c
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
+  RNSVG: 38ca962c970dbce1ca38991a5aebf26d163f9efb
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 6c8252e38d65aa387daee699eacf027e055e0b31
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 1122d091a2b10c130ff0d382b7e258c2b93533d7
+PODFILE CHECKSUM: 02d2d35de4db5bc33a3802411c1307bbb96437dd
 
 COCOAPODS: 1.11.3
